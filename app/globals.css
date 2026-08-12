@@ -466,8 +466,6 @@ button {
 }
 
 .hero-line .line.outline {
-  font-weight: 300;
-  font-style: italic;
   color: transparent;
   -webkit-text-stroke: 1.5px var(--ink);
 }
@@ -485,7 +483,6 @@ button {
 
 .rot-word {
   display: inline-block;
-  font-style: italic;
   font-weight: 800;
   color: var(--accent);
   position: relative;
@@ -511,39 +508,7 @@ button {
 }
 
 .hero-meta {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-top: clamp(30px, 4.5vw, 56px);
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.9s var(--ease) 0.5s, transform 0.9s var(--ease) 0.5s;
-}
-
-.hero.in .hero-meta {
-  opacity: 1;
-  transform: none;
-}
-
-.hero-rule {
-  width: 56px;
-  height: 1px;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-.hero-tag,
-.hero-index {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
-.hero-index {
-  color: var(--ink-faint);
+  display: none;
 }
 
 /* ============ SHOWREEL — 2.39:1 cinemascope band ============ */
