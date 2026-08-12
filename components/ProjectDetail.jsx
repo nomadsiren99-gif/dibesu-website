@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Reveal from "./Reveal";
+import { asset } from "@/lib/path";
 
 function Section({ num, title, body }) {
   const paragraphs = Array.isArray(body) ? body : [body];
@@ -41,7 +42,7 @@ export default function ProjectDetail({ project, next }) {
         <Reveal delay={0.2}>
           <div className="case-hero-media">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`/images/projects/${project.image}`} alt={project.title} />
+            <img src={asset(`/images/projects/${project.image}`)} alt={project.title} />
           </div>
         </Reveal>
       </section>
@@ -89,7 +90,7 @@ export default function ProjectDetail({ project, next }) {
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={`/images/projects/${img}`}
+                    src={asset(`/images/projects/${img}`)}
                     alt={`${project.title} ${i + 1}`}
                     loading="lazy"
                   />

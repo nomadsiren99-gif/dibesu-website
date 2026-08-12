@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { asset } from "@/lib/path";
 
 const SPANS = [
   "b-l", //  7 cols x 2 rows
@@ -49,7 +50,7 @@ export default function BentoGrid({ projects }) {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`/images/projects/${p.image}`}
+            src={asset(`/images/projects/${p.image}`)}
             alt={p.title}
             loading="lazy"
           />

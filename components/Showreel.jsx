@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { site } from "@/data/site";
+import { asset } from "@/lib/path";
 
 export default function Showreel() {
   const ref = useRef(null);
@@ -40,8 +41,8 @@ export default function Showreel() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <video
           ref={vid}
-          src={site.showreel.video}
-          poster={site.showreel.poster}
+          src={asset(site.showreel.video)}
+          poster={asset(site.showreel.poster)}
           muted
           loop
           playsInline

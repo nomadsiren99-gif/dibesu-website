@@ -2,6 +2,7 @@
 
 import { site } from "@/data/site";
 import Reveal from "./Reveal";
+import { asset } from "@/lib/path";
 
 export default function Clients() {
   const logos = [...site.clients, ...site.clients];
@@ -22,7 +23,7 @@ export default function Clients() {
                 <span className="client-fallback">{c.name}</span>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={c.logo}
+                  src={asset(c.logo)}
                   alt={c.name}
                   loading="lazy"
                   onError={(e) => e.currentTarget.remove()}
