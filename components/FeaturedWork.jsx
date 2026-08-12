@@ -17,7 +17,9 @@ export default function FeaturedWork() {
       <div className="container">
         <div className="feat-head">
           <Reveal>
-            <h2 className="feat-title">My works</h2>
+            <h2 className="feat-title">
+              Selected <em>work</em>
+            </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <Magnetic>

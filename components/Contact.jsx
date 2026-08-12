@@ -22,9 +22,6 @@ export default function Contact() {
             <a className="btn" href={`mailto:${site.email}`}>
               {site.email} <span className="arr">→</span>
             </a>
-            <a className="btn" href="#work">
-              View work <span className="arr">→</span>
-            </a>
           </div>
         </Reveal>
       </div>

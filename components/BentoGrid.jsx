@@ -39,33 +39,56 @@ export default function BentoGrid({ projects }) {
 
   return (
     <div className="bento-grid">
-      {projects.map((p, i) => (
-        <Link
-          key={p.slug}
-          className={`bento-card ${SPANS[i % SPANS.length]}`}
-          href={`/work/${p.slug}`}
-          aria-label={`Open ${p.title}`}
-          onMouseMove={onMove}
-          onMouseLeave={onLeave}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={asset(`/images/projects/${p.image}`)}
-            alt={p.title}
-            loading="lazy"
-          />
-          <span className="bento-veil" aria-hidden="true">
-            <span className="bento-go">→</span>
-            <span className="bento-info">
+      {projects.map((p, i) =>
+        i % 3 === 1 ? (
+          <Link
+            key={p.slug}
+            className={`bento-card bento-type ${SPANS[i % SPANS.length]}`}
+            href={`/work/${p.slug}`}
+            aria-label={`Open ${p.title}`}
+          >
+            <span className="bento-type-num">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <span className="bento-type-word" aria-hidden="true">
+              {p.category.split(" ")[0]}
+            </span>
+            <span className="bento-type-info">
+              <span className="bento-name">{p.title}</span>
               <span className="bento-cat">
                 {p.category} / {p.year}
               </span>
-              <span className="bento-name">{p.title}</span>
             </span>
-          </span>
-          <span className="bento-glare" aria-hidden="true" />
-        </Link>
-      ))}
+            <span className="bento-type-go">→</span>
+          </Link>
+        ) : (
+          <Link
+            key={p.slug}
+            className={`bento-card ${SPANS[i % SPANS.length]}`}
+            href={`/work/${p.slug}`}
+            aria-label={`Open ${p.title}`}
+            onMouseMove={onMove}
+            onMouseLeave={onLeave}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={asset(`/images/projects/${p.image}`)}
+              alt={p.title}
+              loading="lazy"
+            />
+            <span className="bento-veil" aria-hidden="true">
+              <span className="bento-go">→</span>
+              <span className="bento-info">
+                <span className="bento-cat">
+                  {p.category} / {p.year}
+                </span>
+                <span className="bento-name">{p.title}</span>
+              </span>
+            </span>
+            <span className="bento-glare" aria-hidden="true" />
+          </Link>
+        )
+      )}
     </div>
   );
 }

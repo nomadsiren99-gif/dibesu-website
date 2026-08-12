@@ -12,7 +12,6 @@ export default function About() {
         <div className="about-grid">
           <div>
             <Reveal>
-              <span className="eyebrow">{site.about.eyebrow}</span>
               <h2
                 className="about-title"
                 dangerouslySetInnerHTML={{ __html: site.about.heading }}

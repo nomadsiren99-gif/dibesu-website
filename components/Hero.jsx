@@ -44,6 +44,14 @@ export default function Hero() {
             </span>
           </span>
         </InteractiveType>
+
+        <div className="hero-meta">
+          <span className="hero-rule" aria-hidden="true" />
+          <span className="hero-tag">{site.tagline}</span>
+          <span className="hero-index">
+            {String(site.projects.length).padStart(2, "0")} projects
+          </span>
+        </div>
       </div>
     </section>
   );
