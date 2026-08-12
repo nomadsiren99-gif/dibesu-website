@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-const CHARS = "!<>-_\\/[]{}—=+*^?#";
+const CHARS = "!<>-_\\/[]{}=+*^?#";
 
 export default function ScrambleText({ text, className = "" }) {
   const ref = useRef(null);

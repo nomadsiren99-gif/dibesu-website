@@ -5,7 +5,7 @@ import CountUp from "@/components/CountUp";
 import { site } from "@/data/site";
 
 export const metadata = {
-  title: "About — " + site.name,
+  title: "About · " + site.name,
   description: site.metaDescription,
 };
 

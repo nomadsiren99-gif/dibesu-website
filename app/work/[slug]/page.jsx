@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const p = site.projects.find((x) => x.slug === slug);
   return {
-    title: p ? `${p.title} — ${site.name}` : "Work — " + site.name,
+    title: p ? `${p.title} · ${site.name}` : "Work · " + site.name,
     description: p?.description,
   };
 }

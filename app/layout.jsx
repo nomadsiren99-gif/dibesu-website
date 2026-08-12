@@ -1,4 +1,4 @@
-import { Archivo } from "next/font/google";
+import { Archivo, Space_Mono } from "next/font/google";
 import { site } from "@/data/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,14 +11,22 @@ import "./globals.css";
 const archivo = Archivo({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
   variable: "--font-archivo",
+  display: "swap",
+});
+
+const mono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata = {
   title: {
     default: site.metaTitle,
-    template: `%s — ${site.name}`,
+    template: `%s · ${site.name}`,
   },
   description: site.metaDescription,
   openGraph: {
@@ -30,7 +38,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={archivo.variable}>
+    <html lang="en" className={`${archivo.variable} ${mono.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
